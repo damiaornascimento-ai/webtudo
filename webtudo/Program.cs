@@ -3,6 +3,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+var BancoDados = Path.Combine(Directory.GetCurrentDirectory(), "Data", "Loja.db");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
