@@ -12,7 +12,7 @@ namespace webtudo.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public async Task OnGet(string busca)
         {
 
         }

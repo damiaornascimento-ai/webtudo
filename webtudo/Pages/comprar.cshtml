@@ -1,0 +1,88 @@
+@page
+@model webtudo.Pages.ComprarModel
+@{
+    ViewData["Title"] = "Comprar";
+}
+
+<div class="compra-container">
+    <a asp-page="/Index" class="voltar-link">← Voltar aos produtos</a>
+
+    <h1 class="compra-titulo">Finalizar compra</h1>
+
+    @if (!string.IsNullOrEmpty(Model.MensagemSucesso))
+    {
+        <div class="alerta-sucesso">@Model.MensagemSucesso</div>
+    }
+
+  <div class="compra-grid">
+        <section class="resumo-pedido">
+            <h2>Resumo do pedido</h2>
+            <div class="resumo-item">
+                <span class="resumo-label">Produto</span>
+                <span class="resumo-valor">@Model.Nome</span>
+            </div>
+            <div class="resumo-item">
+                <span class="resumo-label">Preço unitário</span>
+                <span class="resumo-valor">R$ @Model.Preco</span>
+            </div>
+            <div class="resumo-item resumo-total">
+                <span class="resumo-label">Total estimado</span>
+                <span class="resumo-valor" id="total-estimado">R$ @Model.Preco</span>
+            </div>
+        </section>
+
+        <section class="formulario-compra">
+            <h2>Dados para entrega</h2>
+
+            <form method="post" class="form-compra">
+                <input type="hidden" asp-for="Nome" />
+                <input type="hidden" asp-for="Preco" />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="campo">
+                    <label asp-for="NomeCompleto">Nome completo</label>
+                    <input asp-for="NomeCompleto" placeholder="Seu nome" required />
+                </div>
+
+                <div class="campo">
+                    <label asp-for="Email">E-mail</label>
+                    <input asp-for="Email" type="email" placeholder="seu@email.com" required />
+                </div>
+
+                <div class="campo">
+                    <label asp-for="Endereco">Endereço de entrega</label>
+                    <textarea asp-for="Endereco" rows="3" placeholder="Rua, número, bairro, cidade..." required></textarea>
+                </div>
+
+                <div class="campo">
+                    <label asp-for="Quantidade">Quantidade</label>
+                    <input asp-for="Quantidade" type="number" min="1" max="99" id="quantidade" />
+                </div>
+
+                <button type="submit" class="btn-finalizar">Confirmar compra</button>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (function () {
+            const precoTexto = '@Model.Preco'.replace(/\./g, '').replace(',', '.');
+            const precoUnitario = parseFloat(precoTexto) || 0;
+            const quantidadeInput = document.getElementById('quantidade');
+            const totalEl = document.getElementById('total-estimado');
+
+            function atualizarTotal() {
+                const qtd = parseInt(quantidadeInput.value, 10) || 1;
+                const total = precoUnitario * qtd;
+                totalEl.textContent = 'R$ ' + total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            }
+
+            if (quantidadeInput && totalEl) {
+                quantidadeInput.addEventListener('input', atualizarTotal);
+            }
+        })();
+    </script>
+}
