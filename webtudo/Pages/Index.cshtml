@@ -17,47 +17,6 @@
             </select>
         </div>
 
-        <div class="filtro-rapido">
-            <h2>Filtros</h2>
-            <form class="filtro-form">
-                <div class="filtro-grupo">
-                    <label for="precoMin">Preco</label>
-                    <div class="filtro-preco">
-                        <input id="precoMin" type="number" placeholder="Min" min="0" />
-                        <input id="precoMax" type="number" placeholder="Max" min="0" />
-                    </div>
-                </div>
-
-                <div class="filtro-grupo">
-                    <label for="marca">Marca</label>
-                    <select id="marca">
-                        <option>Todas</option>
-                        <option>Apple</option>
-                        <option>Samsung</option>
-                        <option>Sony</option>
-                    </select>
-                </div>
-
-                <div class="filtro-grupo">
-                    <label for="avaliacao">Avaliacao minima</label>
-                    <select id="avaliacao">
-                        <option>Qualquer</option>
-                        <option>4 estrelas ou mais</option>
-                        <option>4.5 estrelas ou mais</option>
-                    </select>
-                </div>
-
-                <div class="filtro-checks">
-                    <label><input type="checkbox" /> Frete gratis</label>
-                    <label><input type="checkbox" /> Full / Entrega rapida</label>
-                    <label><input type="checkbox" /> Produto novo</label>
-                    <label><input type="checkbox" /> Em estoque</label>
-                </div>
-
-                <button type="button" class="btn-aplicar-filtro">Aplicar filtros</button>
-            </form>
-        </div>
-
         <div class="produtos-container">
 
     <div class="produto-card">
@@ -121,5 +80,46 @@
                 <tr><td>Ofertas</td><td>4</td></tr>
             </tbody>
         </table>
+
+        <div class="filtro-rapido filtro-lateral">
+            <h2>Filtros</h2>
+            <form class="filtro-form">
+                <div class="filtro-grupo">
+                    <label for="precoMin">Preco</label>
+                    <div class="filtro-preco">
+                        <input id="precoMin" type="number" placeholder="Min" min="0" />
+                        <input id="precoMax" type="number" placeholder="Max" min="0" />
+                    </div>
+                </div>
+
+                <div class="filtro-grupo">
+                    <label for="marca">Marca</label>
+                    <select id="marca">
+                        <option>Todas</option>
+                        <option>Apple</option>
+                        <option>Samsung</option>
+                        <option>Sony</option>
+                    </select>
+                </div>
+
+                <div class="filtro-grupo">
+                    <label for="avaliacao">Avaliacao minima</label>
+                    <select id="avaliacao">
+                        <option>Qualquer</option>
+                        <option>4 estrelas ou mais</option>
+                        <option>4.5 estrelas ou mais</option>
+                    </select>
+                </div>
+
+                <div class="filtro-checks">
+                    <label><input type="checkbox" /> Frete gratis</label>
+                    <label><input type="checkbox" /> Entrega rapida</label>
+                    <label><input type="checkbox" /> Produto novo</label>
+                    <label><input type="checkbox" /> Em estoque</label>
+                </div>
+
+                <button type="button" class="btn-aplicar-filtro">Aplicar</button>
+            </form>
+        </div>
     </aside>
 </section>
