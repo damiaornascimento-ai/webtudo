@@ -1,33 +1,66 @@
 ﻿@page
 @model webtudo.Pages.cadastrarModel
 @{
+    ViewData["Title"] = "Cadastrar Produto";
 }
 
-<div>
-    <label>Nome</label>
-    <input />
-</div>
+<section class="cadastro-container">
+    <h1 class="cadastro-titulo">Cadastrar produto</h1>
 
-<div>
-    <label>Descrição</label>
-    <input />
-</div>
+    <form class="cadastro-form">
+        <div class="campo">
+            <label for="nomeProduto">Nome do produto</label>
+            <input id="nomeProduto" name="nomeProduto" type="text" placeholder="Ex: Smartphone XYZ" />
+        </div>
 
-<div>
-    <label>Preço</label>
-    <input />
-</div>
+        <div class="campo">
+            <label for="categoriaProduto">Categoria</label>
+            <input id="categoriaProduto" name="categoriaProduto" type="text" placeholder="Ex: Eletronicos" />
+        </div>
 
-<div>
-    <label>Estoque</label>
-    <input />
-</div>
+        <div class="campo">
+            <label for="descricaoProduto">Descricao</label>
+            <textarea id="descricaoProduto" name="descricaoProduto" rows="3" placeholder="Descreva o produto..."></textarea>
+        </div>
 
-<div>
-    <label>Url image</label>
-    <input />
-</div>
+        <div class="campo-duplo">
+            <div class="campo">
+                <label for="precoProduto">Preco (R$)</label>
+                <input id="precoProduto" name="precoProduto" type="number" step="0.01" min="0" placeholder="0.00" />
+            </div>
 
-<button>
-    Salvar
-</button>
+            <div class="campo">
+                <label for="estoqueProduto">Estoque</label>
+                <input id="estoqueProduto" name="estoqueProduto" type="number" min="0" placeholder="0" />
+            </div>
+        </div>
+
+        <div class="campo-duplo">
+            <div class="campo">
+                <label for="marcaProduto">Marca</label>
+                <input id="marcaProduto" name="marcaProduto" type="text" placeholder="Ex: Marca ABC" />
+            </div>
+
+            <div class="campo">
+                <label for="skuProduto">SKU</label>
+                <input id="skuProduto" name="skuProduto" type="text" placeholder="Ex: PROD-001" />
+            </div>
+        </div>
+
+        <div class="campo">
+            <label for="urlImagem">URL da imagem</label>
+            <input id="urlImagem" name="urlImagem" type="url" placeholder="https://site.com/imagem.jpg" />
+        </div>
+
+        <div class="campo">
+            <label for="statusProduto">Status</label>
+            <select id="statusProduto" name="statusProduto">
+                <option value="ativo">Ativo</option>
+                <option value="inativo">Inativo</option>
+                <option value="esgotado">Esgotado</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-salvar-produto">Salvar produto</button>
+    </form>
+</section>

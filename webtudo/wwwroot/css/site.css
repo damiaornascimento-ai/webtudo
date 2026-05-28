@@ -7,7 +7,8 @@
 }
 
 body {
-    background-color: white;
+    background: linear-gradient(135deg, #e9f5ff 0%, #dff0ff 45%, #eef8ff 100%);
+    min-height: 100vh;
 }
 
 /* ===== TOPO ===== */
@@ -63,7 +64,7 @@ body {
 
 /* ===== CARD ===== */
 .card-produto {
-    background: white;
+    background: rgba(255, 255, 255, 0.82);
     border-radius: 18px;
     padding: 15px;
     display: flex;
@@ -169,7 +170,7 @@ body {
 }
 
 .produto-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.82);
     border-radius: 16px;
     padding: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -244,7 +245,7 @@ body {
 
 .resumo-pedido,
 .formulario-compra {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
@@ -326,6 +327,69 @@ body {
     margin-bottom: 20px;
 }
 
+.navbar.bg-white {
+    background: rgba(255, 255, 255, 0.72) !important;
+    backdrop-filter: blur(5px);
+}
+
+.container > main {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 18px;
+    padding: 18px;
+}
+
+.cadastro-container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 20px 10px 30px;
+}
+
+.cadastro-titulo {
+    color: #134a73;
+    margin-bottom: 18px;
+}
+
+.cadastro-form {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(89, 165, 220, 0.25);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 6px 24px rgba(60, 130, 184, 0.12);
+}
+
+.campo-duplo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.cadastro-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #c3d9e9;
+    border-radius: 8px;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.btn-salvar-produto {
+    width: 100%;
+    background: #4d9fd6;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: 0.3s;
+}
+
+.btn-salvar-produto:hover {
+    background: #2f89c7;
+}
+
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
     .compra-grid {
@@ -348,3 +412,9 @@ body {
     .preco {
         font-size: 24px;
     }
+    
+    .campo-duplo {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
