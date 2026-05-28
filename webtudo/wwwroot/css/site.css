@@ -199,9 +199,12 @@ body {
 
 .produto-card img {
     border-radius: 10px;
-    object-fit: cover;
-    height: 110px;
+    object-fit: contain;
+    object-position: center;
+    height: 95px;
     width: 100%;
+    max-width: 100%;
+    background: rgba(245, 250, 255, 0.9);
 }
 
 .btn-comprar {
