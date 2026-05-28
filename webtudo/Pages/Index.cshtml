@@ -3,9 +3,62 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<h1> Produtos</h1>
-<button class="btn-mais"></button>
-<div class="produtos-container">
+<section class="catalogo-layout">
+    <div class="catalogo-conteudo">
+        <div class="catalogo-topo">
+            <h1>Produtos</h1>
+            <select class="select-ordenacao" name="ordenacao">
+                <option value="relevancia">Ordenar por: Relevancia</option>
+                <option value="menor-preco">Menor preco</option>
+                <option value="maior-preco">Maior preco</option>
+                <option value="mais-vendidos">Mais vendidos</option>
+                <option value="mais-avaliados">Melhor avaliacao</option>
+                <option value="mais-recentes">Mais recentes</option>
+            </select>
+        </div>
+
+        <div class="filtro-rapido">
+            <h2>Filtros</h2>
+            <form class="filtro-form">
+                <div class="filtro-grupo">
+                    <label for="precoMin">Preco</label>
+                    <div class="filtro-preco">
+                        <input id="precoMin" type="number" placeholder="Min" min="0" />
+                        <input id="precoMax" type="number" placeholder="Max" min="0" />
+                    </div>
+                </div>
+
+                <div class="filtro-grupo">
+                    <label for="marca">Marca</label>
+                    <select id="marca">
+                        <option>Todas</option>
+                        <option>Apple</option>
+                        <option>Samsung</option>
+                        <option>Sony</option>
+                    </select>
+                </div>
+
+                <div class="filtro-grupo">
+                    <label for="avaliacao">Avaliacao minima</label>
+                    <select id="avaliacao">
+                        <option>Qualquer</option>
+                        <option>4 estrelas ou mais</option>
+                        <option>4.5 estrelas ou mais</option>
+                    </select>
+                </div>
+
+                <div class="filtro-checks">
+                    <label><input type="checkbox" /> Frete gratis</label>
+                    <label><input type="checkbox" /> Full / Entrega rapida</label>
+                    <label><input type="checkbox" /> Produto novo</label>
+                    <label><input type="checkbox" /> Em estoque</label>
+                </div>
+
+                <button type="button" class="btn-aplicar-filtro">Aplicar filtros</button>
+            </form>
+        </div>
+
+        <div class="produtos-container">
 
     <div class="produto-card">
         <img src="data:image/webp;base64,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" width="180" />
@@ -48,4 +101,25 @@
         <p> Preço: R$4.235, 35</p>
         <a asp-page="/comprar" asp-route-nome="Console PlayStation 5" asp-route-preco="4.235,35" class="btn-comprar">Comprar</a>
     </div>
-</div>
+        </div>
+    </div>
+
+    <aside class="categorias-lateral">
+        <h2>Categorias</h2>
+        <table class="categorias-tabela">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Qtd</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Celulares</td><td>3</td></tr>
+                <tr><td>Consoles</td><td>3</td></tr>
+                <tr><td>Acessorios</td><td>2</td></tr>
+                <tr><td>Informatica</td><td>1</td></tr>
+                <tr><td>Ofertas</td><td>4</td></tr>
+            </tbody>
+        </table>
+    </aside>
+</section>

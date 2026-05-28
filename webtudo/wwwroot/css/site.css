@@ -217,6 +217,114 @@ body {
     color: #111;
 }
 
+.catalogo-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 22px;
+    align-items: start;
+}
+
+.catalogo-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0 14px;
+}
+
+.catalogo-topo h1 {
+    margin: 0;
+    color: #0f3d61;
+}
+
+.select-ordenacao,
+.filtro-form select,
+.filtro-form input {
+    border: 1px solid #c3d9e9;
+    border-radius: 8px;
+    padding: 9px 10px;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.filtro-rapido {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(89, 165, 220, 0.24);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.filtro-rapido h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #134a73;
+}
+
+.filtro-form {
+    display: grid;
+    gap: 10px;
+}
+
+.filtro-grupo label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1a4463;
+}
+
+.filtro-preco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.filtro-checks {
+    display: grid;
+    gap: 6px;
+    color: #234a67;
+}
+
+.btn-aplicar-filtro {
+    border: none;
+    border-radius: 25px;
+    background: #4d9fd6;
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 12px;
+}
+
+.categorias-lateral {
+    position: sticky;
+    top: 96px;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(89, 165, 220, 0.24);
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.categorias-lateral h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #134a73;
+}
+
+.categorias-tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.categorias-tabela th,
+.categorias-tabela td {
+    border-bottom: 1px solid #d8e8f3;
+    padding: 8px 6px;
+    text-align: left;
+}
+
+.categorias-tabela th:last-child,
+.categorias-tabela td:last-child {
+    text-align: right;
+}
+
 /* ===== PÁGINA DE COMPRA ===== */
 .compra-container {
     max-width: 900px;
@@ -416,5 +524,22 @@ body {
     .campo-duplo {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+
+    .catalogo-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .catalogo-topo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtro-preco {
+        grid-template-columns: 1fr;
+    }
+
+    .categorias-lateral {
+        position: static;
     }
 }
