@@ -1,0 +1,42 @@
+@page
+@model webtudo.Pages.Admin.AtualizarModel
+@{
+    ViewData["Title"] = "Atualizar Produto";
+}
+
+<section class="cadastro-container">
+    <div class="admin-page-topo">
+        <a asp-page="/Admin/Index" class="voltar-link">&larr; Voltar ao painel</a>
+    </div>
+    <h1 class="cadastro-titulo">Atualizar produto</h1>
+
+    <form class="cadastro-form">
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" />
+        </div>
+
+        <div class="campo">
+            <label for="descricao">Descricao</label>
+            <textarea id="descricao" name="descricao" rows="3"></textarea>
+        </div>
+
+        <div class="campo-duplo">
+            <div class="campo">
+                <label for="preco">Preco (R$)</label>
+                <input id="preco" name="preco" type="number" step="0.01" min="0" />
+            </div>
+            <div class="campo">
+                <label for="estoque">Estoque</label>
+                <input id="estoque" name="estoque" type="number" min="0" />
+            </div>
+        </div>
+
+        <div class="campo">
+            <label for="urlImagem">URL da imagem</label>
+            <input id="urlImagem" name="urlImagem" type="url" />
+        </div>
+
+        <button type="submit" class="btn-salvar-produto">Salvar alteracoes</button>
+    </form>
+</section>

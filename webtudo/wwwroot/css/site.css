@@ -585,6 +585,253 @@ body {
     background: #2f89c7;
 }
 
+/* ===== LOGIN ===== */
+.login-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 460px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(89, 165, 220, 0.3);
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 32px rgba(15, 61, 97, 0.2);
+}
+
+.login-logo {
+    display: block;
+    height: 48px;
+    width: auto;
+    margin: 0 auto 16px;
+}
+
+.login-card h1 {
+    text-align: center;
+    color: #134a73;
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.login-subtitulo {
+    text-align: center;
+    color: #456b85;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.login-form .campo {
+    margin-bottom: 14px;
+}
+
+.login-form label {
+    display: block;
+    font-weight: 600;
+    color: #1a4463;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    border: 1px solid #c3d9e9;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 15px;
+}
+
+.login-lembrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #234a67;
+}
+
+.btn-login {
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    background: #4d9fd6;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background: #2f89c7;
+}
+
+.login-erro {
+    background: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.login-areas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.login-area-item {
+    background: rgba(110, 200, 239, 0.15);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.login-area-item strong {
+    display: block;
+    color: #134a73;
+    font-size: 13px;
+}
+
+.login-area-item span {
+    font-size: 11px;
+    color: #456b85;
+}
+
+.login-demo {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #456b85;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.login-demo code {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+
+.login-voltar {
+    display: block;
+    text-align: center;
+    margin-top: 14px;
+    color: #0077cc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-voltar:hover {
+    text-decoration: underline;
+}
+
+/* ===== ADMIN ===== */
+.admin-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 0 30px;
+}
+
+.admin-titulo {
+    color: #134a73;
+    margin-bottom: 8px;
+}
+
+.admin-descricao {
+    color: #456b85;
+    margin-bottom: 22px;
+}
+
+.admin-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.admin-card {
+    display: block;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(89, 165, 220, 0.28);
+    border-radius: 14px;
+    padding: 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.admin-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15, 61, 97, 0.15);
+    color: inherit;
+}
+
+.admin-card h2 {
+    font-size: 18px;
+    color: #134a73;
+    margin-bottom: 6px;
+}
+
+.admin-card p {
+    font-size: 13px;
+    color: #456b85;
+    margin: 0;
+}
+
+.admin-card-secundario {
+    background: rgba(255, 248, 220, 0.85);
+}
+
+.admin-page-topo {
+    margin-bottom: 12px;
+}
+
+.nav-admin {
+    font-weight: 700 !important;
+    color: #1a6fa8 !important;
+}
+
+.nav-usuario {
+    font-weight: 600;
+}
+
+.nav-badge-cliente {
+    font-size: 12px;
+}
+
+.acesso-negado {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 14px;
+}
+
+.acesso-negado h1 {
+    color: #134a73;
+    margin-bottom: 12px;
+}
+
+.acesso-negado p {
+    margin-bottom: 20px;
+    color: #456b85;
+}
+
+.acesso-negado .btn-comprar {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+}
+
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
     .compra-grid {
