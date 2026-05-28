@@ -626,12 +626,44 @@ header .navbar .nav-link {
     margin-right: 12px;
 }
 
-.brand-logo {
+.logo-glass {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.logo-glass:hover {
+    transform: translateY(-1px);
+    filter: drop-shadow(0 8px 18px rgba(8, 45, 82, 0.28));
+}
+
+.logo-glass--static {
+    cursor: default;
+}
+
+.logo-glass--static:hover {
+    transform: none;
+}
+
+.logo-glass--navbar .logo-glass-svg {
     display: block;
     height: 42px;
     width: auto;
-    max-width: 200px;
-    object-fit: contain;
+}
+
+.logo-glass--login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.logo-glass--login .logo-glass-svg {
+    display: block;
+    height: 54px;
+    width: auto;
+    max-width: 100%;
 }
 
 .container > main {
@@ -747,12 +779,6 @@ header .navbar .nav-link {
     box-shadow: var(--glass-shadow-hover);
 }
 
-.login-logo {
-    display: block;
-    height: 48px;
-    width: auto;
-    margin: 0 auto 16px;
-}
 
 .login-card h1 {
     text-align: center;

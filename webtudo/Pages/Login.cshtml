@@ -7,7 +7,11 @@
 
 <section class="login-container">
     <div class="login-card">
-        <img src="~/images/webtudo-tech-logo.png" alt="Webtudo Tech" class="login-logo" />
+        @{
+            ViewData["LogoVariant"] = "login";
+            ViewData["LogoAsLink"] = false;
+        }
+        <partial name="_LogoGlass" />
 
         <h1>Entrar no sistema</h1>
         <p class="login-subtitulo">Area do cliente ou administrativa</p>

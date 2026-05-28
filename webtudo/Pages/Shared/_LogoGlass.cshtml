@@ -1,0 +1,17 @@
+@{
+    var variant = ViewData["LogoVariant"] as string ?? "navbar";
+    var isLink = ViewData["LogoAsLink"] as bool? ?? true;
+}
+
+@if (isLink)
+{
+    <a class="logo-glass logo-glass--@variant" asp-page="/Index">
+        <partial name="_LogoGlassSvg" />
+    </a>
+}
+else
+{
+    <div class="logo-glass logo-glass--@variant logo-glass--static">
+        <partial name="_LogoGlassSvg" />
+    </div>
+}
