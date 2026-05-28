@@ -8,10 +8,12 @@ namespace webtudo.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private readonly ProdutoImagemResolver _imagens;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, ProdutoImagemResolver imagens)
         {
             _logger = logger;
+            _imagens = imagens;
         }
 
         public IList<ProdutoItem> Produtos { get; private set; } = [];
@@ -123,7 +125,10 @@ namespace webtudo.Pages
         }
 
         public string ObterImagem(ProdutoItem produto) =>
-            ProdutoImagensLegacy.Obter(produto.Id) ?? produto.ImagemUrl;
+            _imagens.Resolver(produto.Id, produto.ImagemUrl, produto.Nome);
+
+        public string ObterImagemReserva(ProdutoItem produto) =>
+            _imagens.Placeholder(produto.Nome);
 
         public string LinkCategoria(string nome) =>
             Url.Page("/Index", new

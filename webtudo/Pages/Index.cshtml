@@ -48,7 +48,10 @@
                 @foreach (var produto in Model.Produtos)
                 {
                     <article class="produto-card">
-                        <img src="@Model.ObterImagem(produto)" alt="@produto.Nome" loading="lazy" />
+                        <img src="@Model.ObterImagem(produto)"
+                             alt="@produto.Nome"
+                             loading="lazy"
+                             onerror="this.onerror=null;this.src='@Model.ObterImagemReserva(produto)';" />
                         <span class="produto-categoria">@produto.Categoria</span>
                         <h2>@produto.Nome</h2>
                         <p class="produto-preco">R$ @produto.PrecoCompra</p>
