@@ -6,7 +6,7 @@
 
 <section class="admin-container">
     <h1 class="admin-titulo">Area administrativa</h1>
-    <p class="admin-descricao">Gerencie o catalogo de produtos da Webtudo Tech.</p>
+    <p class="admin-descricao">Gerencie produtos e usuarios da Webtudo Tech.</p>
 
     <div class="admin-cards">
         <a asp-page="/Admin/Cadastrar" class="admin-card">
@@ -16,6 +16,10 @@
         <a asp-page="/Admin/Atualizar" class="admin-card">
             <h2>Atualizar produto</h2>
             <p>Editar informacoes de produtos existentes.</p>
+        </a>
+        <a asp-page="/Admin/CadastrarUsuario" class="admin-card">
+            <h2>Cadastrar usuario</h2>
+            <p>Criar contas de cliente ou administrador.</p>
         </a>
         <a asp-page="/Index" class="admin-card admin-card-secundario">
             <h2>Ver catalogo</h2>

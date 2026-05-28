@@ -1,0 +1,64 @@
+@page
+@model webtudo.Pages.Admin.CadastrarUsuarioModel
+@{
+    ViewData["Title"] = "Cadastrar Usuario";
+}
+
+<section class="cadastro-container">
+    <div class="admin-page-topo">
+        <a asp-page="/Admin/Index" class="voltar-link">&larr; Voltar ao painel</a>
+    </div>
+    <h1 class="cadastro-titulo">Cadastrar usuario</h1>
+    <p class="admin-descricao">Crie contas de cliente ou administrador para acesso ao sistema.</p>
+
+    @if (!string.IsNullOrEmpty(Model.MensagemSucesso))
+    {
+        <div class="alerta-sucesso">@Model.MensagemSucesso</div>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.MensagemErro))
+    {
+        <div class="login-erro">@Model.MensagemErro</div>
+    }
+
+    <form method="post" class="cadastro-form">
+        <div asp-validation-summary="ModelOnly" class="login-erro"></div>
+
+        <div class="campo">
+            <label asp-for="Input.Nome">Nome completo</label>
+            <input asp-for="Input.Nome" type="text" placeholder="Ex: Maria Silva" />
+            <span asp-validation-for="Input.Nome" class="text-danger"></span>
+        </div>
+
+        <div class="campo">
+            <label asp-for="Input.Email">E-mail</label>
+            <input asp-for="Input.Email" type="email" placeholder="usuario@email.com" autocomplete="off" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+
+        <div class="campo-duplo">
+            <div class="campo">
+                <label asp-for="Input.Senha">Senha</label>
+                <input asp-for="Input.Senha" type="password" placeholder="Minimo 6 caracteres" autocomplete="new-password" />
+                <span asp-validation-for="Input.Senha" class="text-danger"></span>
+            </div>
+            <div class="campo">
+                <label asp-for="Input.ConfirmarSenha">Confirmar senha</label>
+                <input asp-for="Input.ConfirmarSenha" type="password" placeholder="Repita a senha" autocomplete="new-password" />
+                <span asp-validation-for="Input.ConfirmarSenha" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label asp-for="Input.Perfil">Perfil de acesso</label>
+            <select asp-for="Input.Perfil" asp-items="Model.Perfis"></select>
+            <span asp-validation-for="Input.Perfil" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn-salvar-produto">Cadastrar usuario</button>
+    </form>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
