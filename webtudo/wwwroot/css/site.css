@@ -513,6 +513,19 @@ body {
     backdrop-filter: blur(5px);
 }
 
+.brand-webtudo-tech {
+    padding: 0;
+    margin-right: 12px;
+}
+
+.brand-logo {
+    display: block;
+    height: 42px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
 .container > main {
     background: rgba(255, 255, 255, 0.62);
     border-radius: 18px;
