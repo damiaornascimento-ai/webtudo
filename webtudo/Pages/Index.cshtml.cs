@@ -16,6 +16,7 @@ namespace webtudo.Pages
 
         public IList<ProdutoItem> Produtos { get; private set; } = [];
         public IList<CategoriaResumo> Categorias { get; private set; } = [];
+        public IList<string> MarcasDisponiveis { get; private set; } = [];
 
         [BindProperty(SupportsGet = true)]
         public string? Categoria { get; set; }
@@ -56,6 +57,8 @@ namespace webtudo.Pages
                 .Select(g => new CategoriaResumo { Nome = g.Key, Quantidade = g.Count() })
                 .OrderBy(c => c.Nome)
                 .ToList();
+
+            MarcasDisponiveis = ["Todas", .. todos.Select(p => p.Marca).Distinct().OrderBy(m => m)];
 
             var query = todos.AsEnumerable();
 

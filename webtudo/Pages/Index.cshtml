@@ -12,7 +12,6 @@
         ("mais-avaliados", "Melhor avaliacao"),
         ("mais-recentes", "Mais recentes")
     };
-    var marcas = new[] { "Todas", "Apple", "Samsung", "Sony" };
     var avaliacoes = new (string Value, string Label)[]
     {
         ("", "Qualquer"),
@@ -48,12 +47,33 @@
             {
                 @foreach (var produto in Model.Produtos)
                 {
-                    <div class="produto-card">
-                        <img src="@Model.ObterImagem(produto)" alt="@produto.Nome" />
+                    <article class="produto-card">
+                        <img src="@Model.ObterImagem(produto)" alt="@produto.Nome" loading="lazy" />
+                        <span class="produto-categoria">@produto.Categoria</span>
                         <h2>@produto.Nome</h2>
-                        <p>Preco: R$ @produto.PrecoCompra</p>
+                        <p class="produto-preco">R$ @produto.PrecoCompra</p>
+                        <p class="produto-avaliacao">★ @produto.Avaliacao.ToString("0.0") · @produto.Marca</p>
+                        @if (!string.IsNullOrWhiteSpace(produto.DescricaoResumo))
+                        {
+                            <p class="produto-resumo">@produto.DescricaoResumo</p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(produto.DescricaoCompleta))
+                        {
+                            <details class="produto-detalhes">
+                                <summary>Ver informacoes completas</summary>
+                                <div class="produto-detalhes-conteudo">
+                                    <p>@produto.DescricaoCompleta</p>
+                                    <ul class="produto-tags">
+                                        @if (produto.FreteGratis) { <li>Frete gratis</li> }
+                                        @if (produto.EntregaRapida) { <li>Entrega rapida</li> }
+                                        @if (produto.ProdutoNovo) { <li>Lancamento</li> }
+                                        @if (produto.EmEstoque) { <li>Em estoque</li> }
+                                    </ul>
+                                </div>
+                            </details>
+                        }
                         <a asp-page="/comprar" asp-route-nome="@produto.Nome" asp-route-preco="@produto.PrecoCompra" class="btn-comprar">Comprar</a>
-                    </div>
+                    </article>
                 }
             }
         </div>
@@ -103,7 +123,7 @@
                 <div class="filtro-grupo">
                     <label for="marca">Marca</label>
                     <select id="marca" name="marca">
-                        @foreach (var marca in marcas)
+                        @foreach (var marca in Model.MarcasDisponiveis)
                         {
                             var marcaAtiva = (string.IsNullOrWhiteSpace(Model.Marca) && marca == "Todas") || Model.Marca == marca;
                             if (marcaAtiva)

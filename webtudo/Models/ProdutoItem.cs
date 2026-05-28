@@ -15,6 +15,8 @@ namespace webtudo.Models
         public bool ProdutoNovo { get; set; }
         public bool EmEstoque { get; set; }
         public string ImagemUrl { get; set; } = string.Empty;
+        public string DescricaoResumo { get; set; } = string.Empty;
+        public string DescricaoCompleta { get; set; } = string.Empty;
     }
 
     public class CategoriaResumo
