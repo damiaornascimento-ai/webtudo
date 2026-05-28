@@ -70,9 +70,10 @@
             </thead>
             <tbody>
                 <tr class="@(string.IsNullOrWhiteSpace(Model.Categoria) ? "categoria-ativa" : "")">
-                    <td colspan="2">
+                    <td>
                         <a class="categoria-link" asp-page="/Index" asp-route-ordenacao="@Model.Ordenacao">Todas</a>
                     </td>
+                    <td>@Model.Categorias.Sum(c => c.Quantidade)</td>
                 </tr>
                 @foreach (var cat in Model.Categorias)
                 {

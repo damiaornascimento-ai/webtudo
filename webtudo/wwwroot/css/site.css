@@ -246,7 +246,7 @@ body {
 
 .select-ordenacao,
 .filtro-form select,
-.filtro-form input {
+.filtro-form input:not([type="checkbox"]) {
     border: 1px solid #c3d9e9;
     border-radius: 8px;
     padding: 9px 10px;
@@ -290,9 +290,25 @@ body {
 
 .filtro-checks {
     display: grid;
-    gap: 4px;
+    gap: 6px;
     color: #234a67;
     font-size: 12px;
+}
+
+.filtro-checks label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.filtro-checks input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: #4d9fd6;
 }
 
 .btn-aplicar-filtro {
