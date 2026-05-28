@@ -307,7 +307,7 @@ body {
 
 .categorias-lateral {
     position: sticky;
-    top: 96px;
+    top: 16px;
     background: rgba(255, 255, 255, 0.76);
     border: 1px solid rgba(89, 165, 220, 0.24);
     border-radius: 14px;
@@ -339,6 +339,43 @@ body {
 .categorias-tabela th:last-child,
 .categorias-tabela td:last-child {
     text-align: right;
+}
+
+.categoria-link {
+    color: #134a73;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.categoria-link:hover {
+    text-decoration: underline;
+}
+
+.categorias-tabela tr.categoria-ativa td {
+    background: rgba(77, 159, 214, 0.18);
+    font-weight: 700;
+}
+
+.catalogo-vazio {
+    grid-column: 1 / -1;
+    padding: 24px;
+    text-align: center;
+    color: #134a73;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+}
+
+.btn-limpar-filtro {
+    display: block;
+    margin-top: 8px;
+    text-align: center;
+    color: #0077cc;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.btn-limpar-filtro:hover {
+    text-decoration: underline;
 }
 
 /* ===== PÁGINA DE COMPRA ===== */
